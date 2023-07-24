@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
 import com.bumptech.glide.Glide
 import com.example.sprintmdulo5.databinding.ItemLayoutBinding
 
 class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
-    var productos = mutableListOf<Producto>()
+    var productos = mutableListOf<ProductoTienda>()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder {
@@ -27,11 +26,11 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
         return productos.size
     }
 
-    fun setData (productosTienda: List<Producto>) {
+    fun setData (productosTienda: ProductoTienda) {
         this.productos= productosTienda.toMutableList()
     }
     inner class ViewHolder (val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind (item: Producto) {
+        fun bind (item: ProductosTienda) {
             binding.nametv.text = item.nombre
             binding.pricetv.text = item.precio.toString()
             Glide.with(binding.root).load(item.imgProductoUrl).into(binding.photoproductimg)
@@ -50,3 +49,4 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
     }
 
 }
+
