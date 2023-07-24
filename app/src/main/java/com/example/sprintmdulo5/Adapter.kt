@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.bumptech.glide.Glide
 import com.example.sprintmdulo5.databinding.ItemLayoutBinding
 
 class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
@@ -33,7 +34,8 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
         fun bind (item: Producto) {
             binding.nametv.text = item.nombre
             binding.pricetv.text = item.precio.toString()
-            binding.photoproductimg.load(item.imgProductoUrl)
+            Glide.with(binding.root).load(item.imgProductoUrl).into(binding.photoproductimg)
+
             binding.cvitem.setOnClickListener{
                 val bundle = Bundle().apply {
                     putString("Nombre producto", item.nombre)

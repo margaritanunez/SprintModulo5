@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import com.bumptech.glide.Glide
 import com.example.sprintmdulo5.databinding.FragmentDetalleBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,7 +22,7 @@ private const val ARG_PARAM4 = "Precio producto"
  * create an instance of this fragment.
  */
 class DetalleFragment : Fragment() {
-    private lateinit var binding = FragmentDetalleBinding
+    private lateinit var binding : FragmentDetalleBinding
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -44,10 +46,12 @@ class DetalleFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentDetalleBinding.inflate(layoutInflater, container, false)
+        Glide.with(binding.root).load(param3).into(binding.imagenDetalle)
         binding.nombreDelProductoTV.text = param1
-        binding.descripcionTV.text = param2
+        binding.descripcionTV.text= param2
+        binding.precioDetalleTV.text= param4
 
-
+        Navigation.findNavController(binding.root).navigate(R.id.action_detalleFragment_to_carritoFragment)
 
         return binding.root
     }
