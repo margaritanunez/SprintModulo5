@@ -26,11 +26,18 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
         return productos.size
     }
 
-    fun setData (productosTienda: ProductoTienda) {
-        this.productos= productosTienda.toMutableList()
+    fun setData(productoTienda: ProductoTienda) {
+        //this.productos = productoTienda.toMutableList()
+
     }
+
+    /*fun setData (productoTienda: ProductoTienda) {
+        this.productos= productoTienda.toMutableList()
+    }
+
+     */
     inner class ViewHolder (val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind (item: ProductosTienda) {
+        fun bind (item: ProductoTienda) {
             binding.nametv.text = item.nombre
             binding.pricetv.text = item.precio.toString()
             Glide.with(binding.root).load(item.imgProductoUrl).into(binding.photoproductimg)

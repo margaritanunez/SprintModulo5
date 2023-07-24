@@ -45,17 +45,13 @@ class PrincipalFragment : Fragment() {
 
     private fun initAdapter() {
         var adapter = Adapter()
-        var productosTienda = ProductoTienda()
+        var productoTienda = ProductoTienda()
         adapter.setData(productoTienda)
         binding.listaproductosRV.adapter = adapter
 
     }
 
-    private fun ProductosTienda(): ProductoTienda {
-        TODO("Not yet implemented")
-    }
-
-    private fun initData() {
+    fun initData() {
         val productos = mutableListOf<ProductoTienda>().apply {
             add(ProductoTienda("Pasión de vaquerales", 200000, "Horrendas botas de vaquero, color café y detalles de dudosa procedencia. Si se siente parte del elenco de Pasión de Gavilanes, no deje pasar esta oportunidad.","https://images.unsplash.com/photo-1578847945588-d6c83689e3d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80"))
             add(ProductoTienda("Toy story", 500000, "Si creciste viendo Toy Story, este es el momento ideal para volver a transformarte en el jovenzuelo inocente que solías ser. Última unidad, rebajada al 80% por lo feas que son", "https://images.unsplash.com/photo-1635779503036-27cbbdcdbbd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"))
@@ -76,14 +72,14 @@ class PrincipalFragment : Fragment() {
             add(ProductoTienda("Todo tiempo al lado de la playa fue mejor",283277 , "Son unas sandalias horrendas, pero no pagarías lo que fuera por sentirte otra vez de vacaciones?", "https://images.unsplash.com/photo-1515965230482-0b9b46fbee14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=917&q=80"))
             add(ProductoTienda("Sandalias viajeras",91282 , "Si utilizas tres veces esta sandalías, te llevas una vida de viajero forever", "https://images.unsplash.com/photo-1509134072290-fffe152264c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=873&q=80"))
             add(ProductoTienda("Chalatines", 292932 , "Todos hemos ocupado las chalas con los calcetines. Nada de glamour but, a quién le importa, los gustos culposos son para seguir disfrutándolos. Por la compra de estas sandalias se lleva un pack de calcetines", "https://images.unsplash.com/photo-1504659913281-61817e6e2e9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"))
-            add(ProductoTienda("Zapa y perrea",882832 , "No sabes bailar? o solo no llevas las zapatillas correctas?, por la compra de este producto te llevas a uno de los bailarines de Rojos para que aprendas a perrear hasta el piso", "https://images.unsplash.com/photo-1528312197634-81237efce1f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80"))
+            add(ProductoTienda("Zapa y perrea",882832 , "No sabes bailar? o solo no llevas las zapatillas correctas?, por la compra de este producto te llevas a uno de los bailarines de Rojo para que aprendas a perrear hasta el piso", "https://images.unsplash.com/photo-1528312197634-81237efce1f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80"))
             add(ProductoTienda("WTF", 0 , "Si es valiente para ocupar algo tan feo, usted no me debe pagar nada, yo le debo a usted", "https://images.unsplash.com/photo-1542674684-9d4e400a09fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"))
-            add(ProductoTienda("Bendishowe", 29382 , "Ideales para hacerle un obsequio al papá de la bendi, viene con el soponcio del aludido incluido", "https://images.unsplash.com/photo-1497319892902-e0a47680bb6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"))
+            add(ProductoTienda("Bendishower", 29382 , "Ideales para hacerle un obsequio al papá de la bendi, viene con el soponcio del aludido incluido", "https://images.unsplash.com/photo-1497319892902-e0a47680bb6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"))
             add(ProductoTienda("Mi tesoro", 19282, "Las favoritas del 99% de los chilensis", "https://images.unsplash.com/photo-1543420629-5350879dd4cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80"))
             add(ProductoTienda("Cleopatra",109291 , "Si no son las sandalias que usaba miss Cleo, entonces estuvieron muy cerca de serlo. Siente la comodidad de andar caminando con una piedra amarrada a los pies, con el diseño más hermoso de la vida", "https://images.unsplash.com/photo-1603487742131-4160ec999306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"))
             add(ProductoTienda("Tigresa del oriente mood", 192881, "Una verdadera tigresa no deja de pasar esta oportunidad. Color: difícil de definir entre tanta fealdad.", "https://images.unsplash.com/photo-1606846851283-6394c2840b87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"))
             add(ProductoTienda("24 horas", 27732 , "Puedes ocuparla incluso al dormir, son lo más cómodo que verás jamás", "https://images.unsplash.com/photo-1598343168334-00b3b1791280?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"))
-            add(ProductoTienda("Pintamos toda la casa", 192929 , "Azúcar, juguetes y muchos colores. De seguro no serás una Chica Superpoderosa al usarlas, pero te sentirás el arcoiris que vienen después de la tormenta", "https://images.unsplash.com/photo-1535038872957-c20dea0c6f26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"))
+            add(ProductoTienda("Pintamos toda la casa", 192929 , "Azúcar, juguetes y muchos colores. De seguro no serás una Chica Superpoderosa al usarlas, pero te sentirás el arcoiris que viene después de la tormenta", "https://images.unsplash.com/photo-1535038872957-c20dea0c6f26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"))
             add(ProductoTienda("Multiuso", 57848, "Ideales para actividades que requieran de mucho movimiento. Incluso son geniales para hacer ejercicio. Color por defecto: negro como la vida misma", "https://images.unsplash.com/photo-1505765875074-b5e4ab9b44aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"))
             add(ProductoTienda("Channel", 70038483, "Solo por ser channel, deja que ese don consumista te lleve por el camino del bien", "https://images.unsplash.com/photo-1604001307862-2d953b875079?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=379&q=80"))
             add(ProductoTienda("Stilettos instagrameables", 126513, "No son hermosos?, la ropa necesaria para poder combinar este hermoso zapato no viene incluido", "https://images.unsplash.com/photo-1459712105412-be146fae746d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80"))

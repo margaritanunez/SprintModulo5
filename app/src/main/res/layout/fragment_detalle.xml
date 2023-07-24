@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDFFAE"
     tools:context=".DetalleFragment">
 
     <ImageView
@@ -20,6 +21,8 @@
         android:id="@+id/productoCV"
         android:layout_width="409dp"
         android:layout_height="100dp"
+        android:background="#E9FFC2"
+        android:backgroundTint="#E9FFC2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +58,7 @@
         android:id="@+id/descripcionTV"
         android:layout_width="395dp"
         android:layout_height="144dp"
+        android:background="#C3EDC0"
         android:text="Descripción"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,23 +70,25 @@
         android:id="@+id/precioDetalleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginTop="80dp"
+        android:background="#C3EDC0"
         android:text="Precio"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/addCarritobtn"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcionTV" />
 
     <Button
         android:id="@+id/addCarritobtn"
         android:layout_width="157dp"
         android:layout_height="81dp"
-        android:layout_marginEnd="44dp"
+        android:backgroundTint="#AAC8A7"
         android:text="Agregar al carrito"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripcionTV"
-        app:layout_constraintVertical_bias="0.707" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/precioDetalleTV"
+        app:layout_constraintVertical_bias="0.765" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
