@@ -29,6 +29,7 @@ class CarritoFragment : Fragment() {
     private lateinit var preference: SharedPreferences
     private lateinit var binding: FragmentCarritoBinding
     private var gson = Gson()
+    private var lista = mutableListOf <ProductoTienda>()
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -57,8 +58,11 @@ class CarritoFragment : Fragment() {
             this.requireActivity().getSharedPreferences("dominar el mundo", Context.MODE_PRIVATE)
         val type: Type = object : TypeToken<MutableList<ProductoTienda?>?>() {}.type
         var datosPreference = preference.getString("lista carrito", null)
-        var lista: MutableList<ProductoTienda> = gson.fromJson(datosPreference, type)
+        if(datosPreference != null) {
+            lista = gson.fromJson(datosPreference, type)
+        }
         lista.add(ProductoTienda(param1!!, param2!!, param3!!, param4!!))
+        Log.d("lista", lista.toString())
         val adapterCarro = AdapterCarro()
         adapterCarro.setData(lista)
         binding.rvcarrito.adapter = adapterCarro
