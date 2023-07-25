@@ -1,5 +1,6 @@
 package com.example.sprintmdulo5
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -24,6 +25,7 @@ private const val ARG_PARAM4 = "param4"
  */
 class DetalleFragment : Fragment() {
     private lateinit var binding : FragmentDetalleBinding
+    var bundle = Bundle()
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -34,6 +36,7 @@ class DetalleFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
+            bundle = it
             param1 = it.getString("Nombre producto")
             param2 = it.getInt("Precio producto")
             Log.d("precio", param1!!)
@@ -54,7 +57,7 @@ class DetalleFragment : Fragment() {
         binding.precioDetalleTV.text = param2.toString()
 
         binding.addCarritobtn.setOnClickListener{
-            Navigation.findNavController(binding.root).navigate(R.id.action_detalleFragment_to_carritoFragment)
+            Navigation.findNavController(binding.root).navigate(R.id.action_detalleFragment_to_carritoFragment, bundle)
         }
 
         return binding.root
@@ -82,3 +85,4 @@ class DetalleFragment : Fragment() {
             }
     }
 }
+
