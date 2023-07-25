@@ -11,10 +11,10 @@ import com.example.sprintmdulo5.databinding.FragmentDetalleBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "Nombre producto"
-private const val ARG_PARAM2 = "Descripción producto"
-private const val ARG_PARAM3 = "URL imagen"
-private const val ARG_PARAM4 = "Precio producto"
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+private const val ARG_PARAM3 = "param3"
+private const val ARG_PARAM4 = "param4"
 
 /**
  * A simple [Fragment] subclass.
@@ -33,10 +33,10 @@ class DetalleFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-            param3 = it.getString(ARG_PARAM3)
-            param4 = it.getString(ARG_PARAM4)
+            param1 = it.getString("nombre producto")
+            param2 = it.getString("precio")
+            param3 = it.getString("descripción producto")
+            param4 = it.getString("url imagen")
         }
     }
 
@@ -46,11 +46,14 @@ class DetalleFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentDetalleBinding.inflate(layoutInflater, container, false)
-        Glide.with(binding.root).load(param3).into(binding.imagenDetalle)
+        Glide.with(binding.root).load(param4).into(binding.imagenDetalle)
         binding.nombreDelProductoTV.text = param1
-        binding.descripcionTV.text= param2
-        binding.precioDetalleTV.text= param4
+        binding.descripcionTV.text= param3
+        binding.precioDetalleTV.text= param2
 
+        binding.addCarritobtn.setOnClickListener{
+
+        }
         Navigation.findNavController(binding.root).navigate(R.id.action_detalleFragment_to_carritoFragment)
 
         return binding.root

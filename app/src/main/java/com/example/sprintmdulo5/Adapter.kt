@@ -26,16 +26,11 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
         return productos.size
     }
 
-    fun setData(productoTienda: ProductoTienda) {
-        //this.productos = productoTienda.toMutableList()
+    fun setData(productoTienda:  List<ProductoTienda>) {
+        this.productos = productoTienda.toMutableList()
 
     }
 
-    /*fun setData (productoTienda: ProductoTienda) {
-        this.productos= productoTienda.toMutableList()
-    }
-
-     */
     inner class ViewHolder (val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind (item: ProductoTienda) {
             binding.nametv.text = item.nombre

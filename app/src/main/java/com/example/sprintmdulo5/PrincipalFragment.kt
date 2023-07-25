@@ -38,20 +38,19 @@ class PrincipalFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentPrincipalBinding.inflate(layoutInflater, container, false)
         initAdapter()
-        initData()
         return binding.root
     }
 
 
     private fun initAdapter() {
         var adapter = Adapter()
-        var productoTienda = ProductoTienda()
+        var productoTienda = initData()
         adapter.setData(productoTienda)
         binding.listaproductosRV.adapter = adapter
 
     }
 
-    fun initData() {
+    fun initData() : List<ProductoTienda> {
         val productos = mutableListOf<ProductoTienda>().apply {
             add(ProductoTienda("Pasión de vaquerales", 200000, "Horrendas botas de vaquero, color café y detalles de dudosa procedencia. Si se siente parte del elenco de Pasión de Gavilanes, no deje pasar esta oportunidad.","https://images.unsplash.com/photo-1578847945588-d6c83689e3d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80"))
             add(ProductoTienda("Toy story", 500000, "Si creciste viendo Toy Story, este es el momento ideal para volver a transformarte en el jovenzuelo inocente que solías ser. Última unidad, rebajada al 80% por lo feas que son", "https://images.unsplash.com/photo-1635779503036-27cbbdcdbbd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"))
@@ -102,6 +101,7 @@ class PrincipalFragment : Fragment() {
             add(ProductoTienda("Nadie brilla más que yo",823872 , "zapatos peep toe con brillo, porque nadie brilla más que tú", "https://images.unsplash.com/photo-1581101767113-1677fc2beaa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80"))
 
         }
+        return productos
 
     }
 
