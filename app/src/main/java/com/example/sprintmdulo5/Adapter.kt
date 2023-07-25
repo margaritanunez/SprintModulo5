@@ -41,7 +41,8 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
                 val bundle = Bundle().apply {
                     putString("Nombre producto", item.nombre)
                     putInt("Precio producto", item.precio)
-                    putString("URL",item.imgProductoUrl)
+                    putString("descripción producto", item.descripcion)
+                    putString("url imagen",item.imgProductoUrl)
                 }
                 Navigation.findNavController(binding.root).navigate(R.id.action_principalFragment_to_detalleFragment, bundle)
             }

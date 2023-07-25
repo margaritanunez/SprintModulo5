@@ -1,6 +1,7 @@
 package com.example.sprintmdulo5
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,15 +27,16 @@ class DetalleFragment : Fragment() {
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
-    private var param2: String? = null
+    private var param2: Int? = null
     private var param3: String? = null
     private var param4: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString("nombre producto")
-            param2 = it.getString("precio")
+            param1 = it.getString("Nombre producto")
+            param2 = it.getInt("Precio producto")
+            Log.d("precio", param1!!)
             param3 = it.getString("descripción producto")
             param4 = it.getString("url imagen")
         }
@@ -49,7 +51,7 @@ class DetalleFragment : Fragment() {
         Glide.with(binding.root).load(param4).into(binding.imagenDetalle)
         binding.nombreDelProductoTV.text = param1
         binding.descripcionTV.text= param3
-        binding.precioDetalleTV.text= param2
+        binding.precioDetalleTV.text = param2.toString()
 
         binding.addCarritobtn.setOnClickListener{
             Navigation.findNavController(binding.root).navigate(R.id.action_detalleFragment_to_carritoFragment)
