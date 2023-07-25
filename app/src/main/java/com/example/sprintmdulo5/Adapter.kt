@@ -43,7 +43,7 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
                     putInt("Precio producto", item.precio)
                     putString("URL",item.imgProductoUrl)
                 }
-                Navigation.findNavController(binding.root).navigate(R.id.action_principalFragment_to_detalleFragment)
+                Navigation.findNavController(binding.root).navigate(R.id.action_principalFragment_to_detalleFragment, bundle)
             }
 
         }

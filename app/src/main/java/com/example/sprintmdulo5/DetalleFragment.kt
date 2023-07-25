@@ -52,9 +52,8 @@ class DetalleFragment : Fragment() {
         binding.precioDetalleTV.text= param2
 
         binding.addCarritobtn.setOnClickListener{
-
+            Navigation.findNavController(binding.root).navigate(R.id.action_detalleFragment_to_carritoFragment)
         }
-        Navigation.findNavController(binding.root).navigate(R.id.action_detalleFragment_to_carritoFragment)
 
         return binding.root
     }
